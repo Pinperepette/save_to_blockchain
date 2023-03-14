@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Twitter Pirate Blockchain Stamp Block {{ block.id }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <br>
+    <center>
+    <h1>Block {{ block.id }}</h1>
+    <p>Timestamp: {{ block.timestamp }}</p>
+  </center>
+    <br>
+    <div class="container mt-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="media">
+            <img class="mr-3 rounded-circle" src="{{ block.data.user.profile_image_url }}" alt="Generic placeholder image">
+            <div class="media-body">
+              <h5 class="mt-0">{{ block.data.user.screen_name}}</h5>
+              <p>{{ block.data.created_at }}</p>
+              <div class="row">
+                <div class="col-6">
+                  <h4 class="text-muted">{{ block.data.full_text }}</h4>
+                  {% if 'extended_entities' in block.data %}
+                    <img src="{{ block.data.extended_entities.media[0].media_url_https }}" class="img-fluid mt-3">
+                  {% endif %}
+                </div>
+                <div class="col-6 text-right">
+                  <i class="fas fa-heart"></i> {{ block.data.favorite_count }}
+                  <i class="fas fa-retweet ml-3"></i> {{ block.data.retweet_count }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <h2>Hash: {{ block.hash }}</h2>
+    <h2>Previous_Hash: {{ block.previous_hash}}</h2>
+    <script src="https://kit.fontawesome.com/your_key.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
