@@ -1,6 +1,6 @@
 # PirlaStamp-Lite
 
-PirlaStamp-Lite is a local version of TweetStamp, inspired by the original but designed to comply with Twitter rules and GDPR.
+PirlaStamp-Lite is a local version of TweetStamp, designed to comply with Twitter rules and GDPR. It is important to note that putting an online version of TweetStamp could violate Twitter's policies and GDPR, so it is necessary to use PirlaStamp-Lite only at a local level and not share it on the Internet.
 
 ## Features
 
